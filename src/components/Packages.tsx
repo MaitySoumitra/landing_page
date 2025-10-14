@@ -42,7 +42,7 @@ export default function Packages() {
                         I am a kind, courteous person and value honesty, family, good communication, and reliability. I love the collaborative nature of photography and working with people from all walks of life. A lot of a photographer’s work is conducted away from the camera, from styling a space to setting up a shot, through to post-production and delivery. I bring a relaxed but professional attitude to my work and thrive in a varied workspace. Throughout the process, from briefing to delivery, I will keep you informed and up-to-date. I will work closely with all stakeholders to get the right result.
                     </p>
 
-                    <p className="lg:text-base md:text-sm text-sm  leading-relaxed">
+                    <p className="hidden lg:block lg:text-base md:text-sm text-sm  leading-relaxed">
                         While my main focus is real estate, I also photograph food and beverages, products, corporate and private functions, architecture, and exhibitions. I love working in multicultural, metropolitan Melbourne, but for the right project, I am happy to travel further afield. <br /> If you have a property ready to go to market, or another project in the works, please contact me.
                     </p>
 
