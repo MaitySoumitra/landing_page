@@ -1,0 +1,9 @@
+.max-w-9xl{
+  max-width: 1600px;
+}
+
+.text-half-red-white {
+  background: linear-gradient(to bottom, #dc2626 62%, #ffffff 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
