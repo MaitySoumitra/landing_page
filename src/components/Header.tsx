@@ -4,6 +4,10 @@ import { List, X } from "phosphor-react";
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [activeLink, setActiveLink] = useState<string>("home");
+    const handleClick = (link: string) => {
+        setActiveLink(link); 
+    };
 
     const toggleMenu = () => setMenuOpen(!menuOpen);
     const isDesktop = useIsDesktop();
@@ -23,13 +27,51 @@ export default function Header() {
                         </div>
 
 
-                        <nav className="hidden md:flex items-center space-x-6  text-sm lg:text-[16px] font-medium">
-                            <a href="#" className="hover:text-red-500 border-b-2 border-red-600 pb-1">Home</a>
-                            <a href="#" className="hover:text-red-500">{isDesktop ? "Residential Portfolio" : "Residential"}</a>
-                            <a href="#" className="hover:text-red-500">{isDesktop ? "Commercial Portfolio" : "Commercial"}</a>
-                            <a href="#" className="hover:text-red-500">{isDesktop ? "Aerial Drone Photography" : "Aerial Drone"}</a>
-                            <a href="#" className="hover:text-red-500">{isDesktop ? "Contact" : "Get in Touch"}</a>
+                        <nav className="hidden md:flex items-center space-x-6 text-sm lg:text-[16px] font-medium">
+                            {/* Home Link */}
+                            <a
+                                href="/"
+                                className={`hover:text-red-500 pb-1 ${activeLink === "home" ? "border-b-2 border-red-600" : ""}`}
+                                onClick={() => handleClick("home")}
+                            >
+                                Home
+                            </a>
 
+                            {/* Residential Link */}
+                            <a
+                                href="#"
+                                className={`hover:text-red-500 ${activeLink === "residential" ? "border-b-2 border-red-600" : ""}`}
+                                onClick={() => handleClick("residential")}
+                            >
+                                {isDesktop ? "Residential Portfolio" : "Residential"}
+                            </a>
+
+                            {/* Commercial Link */}
+                            <a
+                                href="#"
+                                className={`hover:text-red-500 ${activeLink === "commercial" ? "border-b-2 border-red-600" : ""}`}
+                                onClick={() => handleClick("commercial")}
+                            >
+                                {isDesktop ? "Commercial Portfolio" : "Commercial"}
+                            </a>
+
+                            {/* Aerial Drone Link */}
+                            <a
+                                href="#"
+                                className={`hover:text-red-500 ${activeLink === "aerial" ? "border-b-2 border-red-600" : ""}`}
+                                onClick={() => handleClick("aerial")}
+                            >
+                                {isDesktop ? "Aerial Drone Photography" : "Aerial Drone"}
+                            </a>
+
+                            {/* Contact Link */}
+                            <a
+                                href="#"
+                                className={`hover:text-red-500 ${activeLink === "contact" ? "border-b-2 border-red-600" : ""}`}
+                                onClick={() => handleClick("contact")}
+                            >
+                                {isDesktop ? "Contact" : "Get in Touch"}
+                            </a>
                         </nav>
                         <div className="flex items-center space-x-4">
                             {/* Desktop CTA Button */}
@@ -49,31 +91,30 @@ export default function Header() {
                                 <List size={32} />
                             </button>
                         </div>
-                  
 
-                    {/* Mobile Slide-in Menu */}
-                    <div
-                        className={`fixed top-0 right-0 h-full w-64 bg-gray-900 text-white transform transition-transform duration-300 z-500 color-white p-6 space-y-6 ${menuOpen ? "translate-x-0" : "translate-x-full"
-                            }`}
-                    >
-                        {/* Close Button */}
-                        <div className="flex justify-end">
-                            <button onClick={toggleMenu} aria-label="Close Menu" className="text-2xl">
-                                <X size={32} />
-                            </button>
+
+                        {/* Mobile Slide-in Menu */}
+                        <div
+                            className={`fixed top-0 right-0 h-full w-64 bg-gray-900 text-white transform transition-transform duration-300 z-500 color-white p-6 space-y-6 ${menuOpen ? "translate-x-0" : "translate-x-full"
+                                }`}
+                        >
+                            {/* Close Button */}
+                            <div className="flex justify-end">
+                                <button onClick={toggleMenu} aria-label="Close Menu" className="text-2xl">
+                                    <X size={32} />
+                                </button>
+                            </div>
+
+                            {/* Mobile Links */}
+                            <nav className="flex flex-col space-y-4 ">
+                                <a href="#" className="hover:text-red-500">Home</a>
+                                <a href="#" className="hover:text-red-500">Residential Portfolio</a>
+                                <a href="#" className="hover:text-red-500">Commercial Portfolio</a>
+                                <a href="#" className="hover:text-red-500">Aerial Drone Photography</a>
+                                <a href="#" className="hover:text-red-500">Contact</a>
+                            </nav>
                         </div>
-
-                        {/* Mobile Links */}
-                        <nav className="flex flex-col space-y-4 ">
-                            <a href="#" className="hover:text-red-500">Home</a>
-                            <a href="#" className="hover:text-red-500">Residential Portfolio</a>
-                            <a href="#" className="hover:text-red-500">Commercial Portfolio</a>
-                            <a href="#" className="hover:text-red-500">Aerial Drone Photography</a>
-                            <a href="#" className="hover:text-red-500">Contact</a>
-
-                        </nav>
                     </div>
-                      </div>
                 </div>
             </header>
         </>

@@ -1,20 +1,24 @@
+import PackagesAnimation from "./Animations/PackagesAnimation";
+
 export default function Packages() {
     return (
         <div className="bg-gray-800 text-white flex flex-col items-center py-10 px-5 sm:px-6 lg:px-12 space-y-6">
+            <PackagesAnimation/>
+            
             {/* === Top Section === */}
-            <div className="flex flex-col md:flex-row gap-6 max-w-[1280px] w-full mx-auto px-4">
+            <div className="flex flex-col md:flex-row gap-6 max-w-[1280px] w-full mx-auto px-4 top-section">
                 {/* Left Image */}
                 <div className="w-full md:w-[520px]">
                     <img
                         src="/kitchen.jpg"
                         alt="Kitchen Interior"
-                        className="w-full h-full object-cover rounded-lg max-h-[600px]"
+                        className="w-full h-full object-cover rounded-lg max-h-[600px] left-image"
                     />
                 </div>
 
                 {/* Right Content */}
                 <div className="w-full md:w-[737px] flex flex-col justify-between space-y-6">
-                    <h1 className="text-[32px] md:text-[40px] font-bold leading-tight pt-6 md:pt-[78px] px-4 md:px-0">
+                    <h1 className="text-[32px] md:text-[40px] font-bold leading-tight pt-6 md:pt-[40px] lg:pt-[78px] px-4 md:px-0 right-content">
                         FEEL THE <span className="text-red-600 italic">AUTHENTICITY</span> <br /> IN EVERY SHOT
                     </h1>
                     <div className="px-4 md:px-0">
@@ -31,8 +35,8 @@ export default function Packages() {
             {/* === Bottom Section (Text + Image) === */}
             <div className="flex flex-col md:flex-row gap-10 max-w-[1280px] w-full mx-auto px-4">
                 {/* Left Text Content */}
-                <div className="flex flex-col justify-center space-y-[26px] w-full lg:w-[810px]">
-                    <h2 className="lg:text-base md:text-sm text-sm font-semibold">Welcome to Rob Rae Photography</h2>
+                <div className="flex flex-col justify-center space-y-[26px] w-full lg:w-[810px] bottom-text">
+                    <h2 className="lg:text-base md:text-sm text-sm font-semibold ">Welcome to Rob Rae Photography</h2>
 
                     <p className="lg:text-base md:text-sm text-sm  leading-relaxed">
                         My name is Rob, and I am an experienced property photographer working out of Melbourne, Victoria. Twenty-five years in professional photography and customer service have given me the skills to work to your brief and deliver the best quality product on time and within budget.
@@ -56,7 +60,7 @@ export default function Packages() {
                     <img
                         src="/frosted-glass.jpg"
                         alt="Frosted Window Graphics"
-                        className="w-full h-full object-cover rounded-lg"
+                        className="w-full h-full object-cover rounded-lg bottom-image"
                     />
                 </div>
             </div>

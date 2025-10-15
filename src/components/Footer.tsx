@@ -1,5 +1,6 @@
 import { ArrowUpRight, CaretDown, CaretUp } from "phosphor-react";
 import { useState } from "react";
+import FooterCTAAnimation from "./Animations/FooterAnimation";
 
 export default function Footer() {
     const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -7,31 +8,40 @@ export default function Footer() {
 
     return (
         <footer className="bg-gray-800 text-white px-6 sm:px-12 pt-20 pb-6">
-
+<FooterCTAAnimation />
             <div className="max-w-[1283px] mx-auto">
                 {/* Call to action section */}
-                <div className="mb-10 lg:text-[90px] md:text-[50px] text-[25px] lg:leading-[90px] md:leading-[50px] leading-[30px] text-center flex flex-col items-center">
-                    <h2 className=" font-extrabold">
-                        GOT ANYTHING IN MIND?
-                    </h2>
+                <div
+  className="mb-10 lg:text-[90px] md:text-[50px] text-[25px] lg:leading-[90px] md:leading-[50px] leading-[30px] text-center flex flex-col items-center"
+  id="footer-cta"
+>
+  <h2 className="font-extrabold" id="footer-title">
+    GOT ANYTHING IN MIND?
+  </h2>
 
-                    <div className="mt-4 flex flex-col  gap-3">
-                        {/* Line 1: GET IN TOUCH + icon */}
-                        <div className="flex items-center gap-3">
-                            <h2 className=" font-extrabold italic text-red-600">
-                                GET IN TOUCH &
-                            </h2>
-                            <div className="lg:w-16 lg:h-16 md:w-12 md:h-12 w-8 h-8 flex items-center justify-center bg-red-600 rounded-full">
-                                <ArrowUpRight weight="bold" className="text-white text-[20px] md:text-[40px]" />
-                            </div>
-                        </div>
+  <div className="mt-4 flex flex-col gap-3">
+    <div className="flex items-center gap-3" id="footer-touch-line">
+      <h2 className="font-extrabold italic text-red-600">GET IN TOUCH &</h2>
+      <div
+  className="lg:w-16 lg:h-16 md:w-12 md:h-12 w-8 h-8 flex items-center justify-center bg-red-600 rounded-full"
+  id="footer-touch-button"
+>
+  <div id="footer-arrow-icon">
+    <ArrowUpRight
+      weight="bold"
+      className="text-white text-[20px] md:text-[40px]"
+    />
+  </div>
+</div>
 
-                        {/* Line 2: & WORK TOGETHER */}
-                        <h2 className=" font-extrabold">
-                            WORK TOGETHER
-                        </h2>
-                    </div>
-                </div>
+    </div>
+
+    <h2 className="font-extrabold" id="footer-work-line">
+      WORK TOGETHER
+    </h2>
+  </div>
+</div>
+
 
 
                 {/* Divider line */}

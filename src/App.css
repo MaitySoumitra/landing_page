@@ -7,3 +7,12 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.letter {
+  display: inline-block;
+  transform-origin: center center; /* Make sure letters rotate around their center */
+  will-change: transform, opacity; /* Optimize performance */
+}
+
+
+
+
